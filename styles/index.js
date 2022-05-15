@@ -227,7 +227,7 @@ const getOpenStyleProps = (props) => {
 
   for (const key in props) {
     const value = props[key];
-    if (typeof value !== 'string' || typeof value !== 'number') {
+    if (typeof value !== 'string' && typeof value !== 'number') {
       filteredProps[key] = value;
       continue;
     }
