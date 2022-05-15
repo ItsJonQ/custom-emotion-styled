@@ -1,4 +1,4 @@
-import { styled } from '../styles';
+import { styled } from '../../styles';
 
 /**
  * Speed build.
@@ -134,7 +134,7 @@ const Avatar = ({ size = 32, ...props }) => (
 );
 
 const HeaderData = () => (
-  <VStack gap={12}>
+  <VStack gap={3}>
     <Text fontSize={12}>#태연 #TAEYEON #Killingvoice</Text>
     <Heading fontSize={18}>
       태연(TAEYEON)의 킬링보이스를 라이브로! - I,그대라는
@@ -208,7 +208,7 @@ const SidebarVideo = () => {
 export default function Page() {
   return (
     <>
-      <VStack gap={8}>
+      <VStack gap={2}>
         <Navbar />
         <Container>
           <AppBody>
@@ -217,7 +217,7 @@ export default function Page() {
               <HeaderData />
               <MetaData />
               <Divider />
-              <VStack gap={32}>
+              <VStack gap={8}>
                 <HStack alignItems="flex-start">
                   <Avatar />
                   <Spacer>
@@ -263,7 +263,7 @@ export default function Page() {
                 </Spacer>
               </HStack>
             </VStack>
-            <VStack gap={16}>
+            <VStack gap={4}>
               <SidebarVideo />
               <SidebarVideo />
               <SidebarVideo />

@@ -213,6 +213,31 @@ const openPseudoProps = {
   _visited: '&:visited',
 };
 
+const spacingSystemProps = {
+  margin: true,
+  marginBottom: true,
+  marginLeft: true,
+  marginRight: true,
+  marginTop: true,
+  padding: true,
+  paddingBottom: true,
+  paddingLeft: true,
+  paddingRight: true,
+  paddingTop: true,
+  gap: true,
+  gridGap: true,
+};
+
+const space = (value) => {
+  if (typeof value !== 'number') return value;
+  return value * 4;
+};
+
+const getSystemStyleValue = (key, value) => {
+  if (spacingSystemProps[key]) return space(value);
+  return value;
+};
+
 /**
  * Filters out potential Styled System CSS props.
  * These CSS props are compiled in a secret __openStyles key.
@@ -231,7 +256,7 @@ const getOpenStyleProps = (props) => {
       filteredProps[key] = value;
       continue;
     }
-    stylesToProcess[key] = value;
+    stylesToProcess[key] = getSystemStyleValue(key, value);
   }
 
   filteredProps.__openStyles = css(stylesToProcess);
