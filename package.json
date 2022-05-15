@@ -1,5 +1,5 @@
 {
-  "name": "atomic-emotion",
+  "name": "custom-emotion-styled",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/css": "^11.9.0",
+    "@emotion/is-prop-valid": "^1.1.2",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0"
