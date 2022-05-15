@@ -1,6 +1,6 @@
 import React from 'react';
 import createEmotion from '@emotion/css/create-instance';
-import isPropValid from '@emotion/is-prop-valid';
+import { forwardHtmlProps } from './forwardHtmlProps';
 
 /**
  * Creating our custom instance of Emotion.
@@ -213,11 +213,6 @@ const openPseudoProps = {
 };
 
 /**
- * Determines of a prop can be rendered on a base HTML Element.
- */
-const shouldForwardProp = (prop) => isPropValid(prop);
-
-/**
  * Filters out potential Styled System CSS props.
  * These CSS props are compiled in a secret __openStyles key.
  */
@@ -348,7 +343,7 @@ export const styled = (Component) => (styles) => {
      * Filter non HTML props for base elements (e.g. `div`).
      */
     const finalProps = isBaseHTMLElement
-      ? getFilteredProps(finalFilteredProps)
+      ? forwardHtmlProps(finalFilteredProps, BaseComponent)
       : finalFilteredProps;
 
     /**
