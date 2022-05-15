@@ -69,6 +69,7 @@ const openCSSProps = {
   alignContent: true,
   alignItems: true,
   alignSelf: true,
+  gap: true,
   flex: true,
   flexBasis: true,
   flexDirection: true,
